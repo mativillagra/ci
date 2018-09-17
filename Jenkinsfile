@@ -12,7 +12,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                
-                    sh "docker run --name scratch.${env.BUILD_ID} scratch.0.0.${env.BUILD_ID}"               
+                    sh "docker run --name scratch.0.0.${env.BUILD_ID} scratch.0.0.${env.BUILD_ID}"               
             }
         }
     }
