@@ -13,7 +13,7 @@ pipeline {
          stage ('Push') {
             steps {
 
-                    sh "docker push registry.gitlab.com/dgrcorrientes/curso-git:0.0.${env.BUILD_ID}"
+                    sh "docker push registry.gitlab.com/dgrcorrientes/curso-git.0.0.${env.BUILD_ID}"
             }
         }
 
