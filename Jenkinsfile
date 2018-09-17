@@ -5,14 +5,14 @@ pipeline {
         stage ('Build') {
             steps {
                 
-                    sh "docker build -t scratch.0.0.${env.BUILD_ID} -f Dockerfile ."                
+                    sh "cd flask-app && docker build -t scratch.0.0.${env.BUILD_ID} -f Dockerfile ."                
             }
         }
 
         stage ('Deploy') {
             steps {
                
-                    sh "docker run --name scratch.0.0.${env.BUILD_ID} scratch.0.0.${env.BUILD_ID}"               
+                    sh "cd flask-appd && docker run -p 8888:5000 --name scratch.0.0.${env.BUILD_ID} scratch.0.0.${env.BUILD_ID}"               
             }
         }
     }
