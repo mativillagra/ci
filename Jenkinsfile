@@ -12,7 +12,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                
-                    sh "cd flask-app && docker run -p 8888:5000 --name scratch.0.0.${env.BUILD_ID} scratch.0.0.${env.BUILD_ID}"               
+                    sh "cd flask-app && docker run -d -p 8888:5000 --name scratch.0.0.${env.BUILD_ID} scratch.0.0.${env.BUILD_ID}"               
             }
         }
     }
