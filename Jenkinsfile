@@ -9,6 +9,12 @@ pipeline {
             }
         }
 
+        stage ('Tag') {
+            steps {
+
+                    sh "cd flask-app && docker tag scratch.0.0.${env.BUILD_ID} localhost:5000/scratch.0.0.${env.BUILD_ID} && docker push localhost:5000/scratch.0.0.${env.BUILD_ID}"
+            }
+        }
 
         stage ('Deploy') {
             steps {
