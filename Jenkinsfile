@@ -18,23 +18,8 @@ pipeline {
 
         stage ('Deploy') {
             steps {
-
-
-                     def origBuildNumber = env.BUILD_NUMBER
-                     def target
-                     if (origBuildNumber == env.BUILD_NUMBER) { 
-                     
-                                    sh "bash deploy .sh ${env.BUILD_ID}"
-                     } 
-                       else 
-                            { 
-                                    target = input message: 'Where to release?',
-                                    parameters: [[$class: 'StringParameterDefinition', name: 'target']]
-
-                    }
-
-  
-              
+               
+                    sh "bash deploy.sh ${env.BUILD_ID}"               
             }
         }
     }
