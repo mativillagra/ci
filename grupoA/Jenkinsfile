@@ -5,14 +5,14 @@ pipeline {
         stage ('Build') {
             steps {
                 
-                    sh "cd grupoA && docker build -t grupoA.0.0.${env.BUILD_ID} -f Dockerfile ."                
+                    sh "cd grupoA && docker build -t norte.0.0.${env.BUILD_ID} -f Dockerfile ."                
             }
         }
 
         stage ('Tag') {
             steps {
 
-                    sh "cd grupoA && docker tag grupoA.0.0.${env.BUILD_ID} localhost:5000/grupoA.0.0.${env.BUILD_ID} && docker push localhost:5000/grupoA.0.0.${env.BUILD_ID}"
+                    sh "cd grupoA && docker tag norte.0.0.${env.BUILD_ID} localhost:5000/norte.0.0.${env.BUILD_ID} && docker push localhost:5000/norte.0.0.${env.BUILD_ID}"
             }
         }
 
