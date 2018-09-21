@@ -19,7 +19,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                
-                    sh "bash groupA/deploy.sh ${env.BUILD_ID}"               
+                    sh "bash grupoA/deploy.sh ${env.BUILD_ID}"               
             }
         }
     }
