@@ -5,14 +5,14 @@ pipeline {
         stage ('Build') {
             steps {
                 
-                    sh "cd flask-app && docker build -t scratch.0.0.${env.BUILD_ID} -f Dockerfile ."                
+                    sh "cd flask-app && docker build -t scratch:0.0.${env.BUILD_ID} -f Dockerfile ."
             }
         }
 
         stage ('Tag') {
             steps {
 
-                    sh "cd flask-app && docker tag scratch.0.0.${env.BUILD_ID} localhost:5000/scratch.0.0.${env.BUILD_ID} && docker push localhost:5000/scratch.0.0.${env.BUILD_ID}"
+                    sh "cd flask-app && docker tag scratch:0.0.${env.BUILD_ID} mativillagra/scratch:0.0.${env.BUILD_ID} && docker push mativillagra/scratch:0.0.${env.BUILD_ID}"
             }
         }
 
@@ -24,3 +24,4 @@ pipeline {
         }
     }
 }
+
