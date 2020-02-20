@@ -1,3 +1,1 @@
-# Curso de GIT para DGR-Corrientes 
-
-git clone https://gitlab.com/dgrcorrientes/curso-git.git
+# Build a Docker Flask-app with a Jenkinsfile
